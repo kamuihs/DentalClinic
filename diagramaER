@@ -1,0 +1,25 @@
+🔗 Diagrama ER – Sistema de Prontuário Eletrônico
+Pacientes  
+↔ Relaciona-se com Consultas, Prontuário, Financeiro e CRM.
+
+Profissionais  
+↔ Relaciona-se com Consultas.
+
+Consultas  
+↔ Relaciona-se com Pacientes e Profissionais.
+↔ Alimenta o Prontuário.
+
+Prontuário  
+↔ Relaciona-se com Pacientes e Consultas.
+
+Financeiro  
+↔ Relaciona-se com Pacientes.
+
+Estoque  
+↔ Relaciona-se com Movimentações de Estoque.
+
+CRM  
+↔ Relaciona-se com Pacientes.
+
+Usuários  
+↔ Relaciona-se com Clínicas via Usuários_Clínicas.
