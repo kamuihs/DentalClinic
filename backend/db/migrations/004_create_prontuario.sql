@@ -1,7 +1,0 @@
-CREATE TABLE IF NOT EXISTS prontuarios (
-  id SERIAL PRIMARY KEY,
-  consulta_id INT NOT NULL REFERENCES consultas(id) ON DELETE CASCADE,
-  descricao TEXT NOT NULL,
-  anexos TEXT,
-  criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
