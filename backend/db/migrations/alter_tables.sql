@@ -1,0 +1,2 @@
+ALTER TABLE crm
+ADD COLUMN status VARCHAR(50);
