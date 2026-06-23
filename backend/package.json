@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "migrate": "psql -U $DB_USER -d $DB_NAME -f backend/db/migrations/*.sql"
-  },
+ "scripts": {
+  "start": "node src/index.js",
+  "dev": "nodemon src/index.js",
+  "migrate": "node runMigrations.js",
+  "seed": "node runSeeds.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",

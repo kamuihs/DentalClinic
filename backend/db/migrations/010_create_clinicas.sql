@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS clinicas (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(150) NOT NULL,
+    cnpj VARCHAR(14) UNIQUE,
+    endereco TEXT,
+    telefone VARCHAR(20),
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
