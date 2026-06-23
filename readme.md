@@ -1,22 +1,26 @@
+<div align="center">
+
 # 🦷 DentalClinic
 
-A full-stack management system for dental clinics and private healthcare practices. Built with a REST API backend and a React frontend, covering the core operational needs of a modern clinic.
+**A full-stack management system for dental clinics and private healthcare practices.**  
+Built with a REST API backend and a React frontend, covering the core operational needs of a modern clinic.
 
----
+<br/>
 
-## 🚀 Tech Stack
+![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-4.x-000000?style=for-the-badge&logo=express&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-blue?style=for-the-badge&logo=postgresql&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma&logoColor=white)
 
-**Backend**
-- Node.js + Express
-- PostgreSQL
-- Prisma ORM
-- Nodemon (dev)
+![React](https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-6.3-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
 
-**Frontend**
-- React 18 + Vite
-- Tailwind CSS v4
-- shadcn/ui + Radix UI
-- React Router
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)
+
+</div>
 
 ---
 
@@ -24,13 +28,40 @@ A full-stack management system for dental clinics and private healthcare practic
 
 | Module | Description |
 |---|---|
-| **Patients** | Registration and full patient records |
-| **Professionals** | Dentist and staff management with CRO registry |
-| **Appointments** | Scheduling with status tracking (scheduled / completed / cancelled) |
-| **Medical Records** | Clinical notes and attachments linked to appointments |
-| **Financial** | Revenue and expense tracking per appointment |
-| **Agenda** | Availability management per professional |
-| **CRM** | Patient contact history and follow-up tracking |
+| 👥 **Patients** | Registration and full patient records |
+| 🦷 **Professionals** | Dentist and staff management with CRO registry |
+| 📅 **Appointments** | Scheduling with status tracking (scheduled / completed / cancelled) |
+| 📋 **Medical Records** | Clinical notes and attachments linked to appointments |
+| 💰 **Financial** | Revenue and expense tracking per appointment |
+| 🗓️ **Agenda** | Availability management per professional |
+| 💬 **CRM** | Patient contact history and follow-up tracking |
+
+---
+
+## 🚀 Tech Stack
+
+<table>
+<tr>
+<td valign="top" width="50%">
+
+**Backend**
+- ⚙️ Node.js + Express
+- 🐘 PostgreSQL
+- 🔷 Prisma ORM
+- 🔄 Nodemon (dev)
+
+</td>
+<td valign="top" width="50%">
+
+**Frontend**
+- ⚛️ React 18 + Vite
+- 🎨 Tailwind CSS v4
+- 🧩 shadcn/ui + Radix UI
+- 🔀 React Router
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -42,7 +73,7 @@ DentalClinic/
 ├── frontend/       # React + Vite interface
 ├── docker/         # Docker configuration
 ├── package.json    # Root script to run both together
-└── readme.md
+└── README.md
 ```
 
 ---
@@ -97,34 +128,51 @@ npm run install:all
 npm run dev
 ```
 
-This starts the backend on `http://localhost:3000` and the frontend on `http://localhost:5173` simultaneously.
+> Starts the backend on `http://localhost:3000` and the frontend on `http://localhost:5173` simultaneously.
 
 ---
 
-## 🌐 API
+## 🌐 API Overview
 
 The REST API follows standard resource-based routing:
 
 ```
-GET    /pacientes
-POST   /pacientes
-PUT    /pacientes/:id
-DELETE /pacientes/:id
+GET    /{resource}        → list all
+POST   /{resource}        → create
+PUT    /{resource}/:id    → update
+DELETE /{resource}/:id    → delete
 ```
 
-The same pattern applies to: `/profissionais`, `/consultas`, `/prontuarios`, `/financeiro`, `/agenda`, `/crm`.
+Available resources: `pacientes` · `profissionais` · `consultas` · `prontuarios` · `financeiro` · `agenda` · `crm`
 
-The frontend connects to the API via a configurable base URL (set via the ⚙️ icon in the sidebar).
+> The frontend connects to the API via a configurable base URL — use the ⚙️ icon in the sidebar to set it.
 
 ---
 
-## 🔧 Fix: inotify watchers (Linux)
+## 🔧 Troubleshooting
 
-If you get `ENOSPC: System limit for number of file watchers reached`:
+<details>
+<summary><b>ENOSPC: System limit for number of file watchers reached (Linux)</b></summary>
 
 ```bash
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 ```
+
+</details>
+
+<details>
+<summary><b>Frontend can't reach the API (failed to fetch)</b></summary>
+
+1. Make sure the backend is running on port `3000`
+2. Check the base URL in the frontend sidebar (⚙️ icon)
+3. Ensure CORS is enabled in the backend:
+
+```js
+const cors = require('cors');
+app.use(cors());
+```
+
+</details>
 
 ---
 
@@ -143,4 +191,10 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo s
 
 ## 📄 License
 
-MIT
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+Made with ☕ and 🦷 by <a href="https://github.com/kamuihs">kamuihs</a>
+</div>
