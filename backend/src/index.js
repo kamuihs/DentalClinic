@@ -16,7 +16,9 @@ const crmRoutes = require('./routes/crm');
 const app = express();
 app.use(cors());
 app.use(express.json());
-
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
 // Rotas
 app.use('/pacientes', pacientesRoutes);
 app.use('/profissionais', profissionaisRoutes);
